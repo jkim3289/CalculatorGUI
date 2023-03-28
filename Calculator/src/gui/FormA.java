@@ -10,6 +10,23 @@ public class FormA extends javax.swing.JFrame {
     public FormA() {
         initComponents();
     }
+    
+    int n1, n2;
+    
+    boolean getUserInput() {
+        String s1 = num1.getText();
+        String s2 = num2.getText();
+        
+        try {
+            n1 = Integer.parseInt(s1);
+            n2 = Integer.parseInt(s2);
+        } catch (NumberFormatException e) {
+            resultLabel.setText("You have entered invalid input");
+            return false;
+        }
+        
+        return true;
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -26,6 +43,7 @@ public class FormA extends javax.swing.JFrame {
         resultLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         num1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,9 +94,9 @@ public class FormA extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(addBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(25, 25, 25)
                         .addComponent(subBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
+                        .addGap(24, 24, 24)
                         .addComponent(multBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(divBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -117,22 +135,25 @@ public class FormA extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void addBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBttnActionPerformed
-        resultLabel.setText(String.valueOf(Integer.parseInt(num1.getText()) + Integer.parseInt(num2.getText())));
+        if (getUserInput()) resultLabel.setText(String.valueOf(n1 + n2));
     }//GEN-LAST:event_addBttnActionPerformed
 
     private void multBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multBttnActionPerformed
-        resultLabel.setText(String.valueOf(Integer.parseInt(num1.getText()) * Integer.parseInt(num2.getText())));
+        if (getUserInput()) resultLabel.setText(String.valueOf(n1 * n2));
     }//GEN-LAST:event_multBttnActionPerformed
 
     private void subBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subBttnActionPerformed
-        resultLabel.setText(String.valueOf(Integer.parseInt(num1.getText()) - Integer.parseInt(num2.getText())));
+        if (getUserInput()) resultLabel.setText(String.valueOf(n1 - n2));
+
     }//GEN-LAST:event_subBttnActionPerformed
 
     private void divBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divBttnActionPerformed
-        resultLabel.setText(String.valueOf(Double.parseDouble(num1.getText()) / Double.parseDouble(num2.getText())));        
+        if (getUserInput()) resultLabel.setText(String.valueOf((double)n1 / n2));
+
     }//GEN-LAST:event_divBttnActionPerformed
 
     private void num1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num1ActionPerformed
