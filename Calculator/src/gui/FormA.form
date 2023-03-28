@@ -48,20 +48,17 @@
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="butn2" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="butn5" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="butn8" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                               <Component id="butn0" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="butn2" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                                      <Component id="butn5" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                                      <Component id="butn8" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="butn6" min="-2" pref="100" max="-2" attributes="0"/>
-                                      <Component id="butn3" min="-2" pref="100" max="-2" attributes="0"/>
-                                      <Component id="butn9" min="-2" pref="100" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="eqlButtn" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="butn6" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="butn3" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="butn10" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -122,18 +119,22 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="butn5" min="-2" pref="70" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="butn8" min="-2" pref="70" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="butn8" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                                  <Component id="butn10" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="butn3" min="-2" pref="70" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="butn6" min="-2" pref="70" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="butn9" min="-2" pref="70" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="butn0" min="-2" pref="70" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="butn0" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="eqlButtn" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -268,12 +269,20 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butn3ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="butn9">
+    <Component class="javax.swing.JButton" name="eqlButtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="="/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eqlButtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="butn10">
       <Properties>
         <Property name="text" type="java.lang.String" value="9"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butn9ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butn10ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
