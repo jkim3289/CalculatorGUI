@@ -10,26 +10,36 @@ public class FormA extends javax.swing.JFrame {
     public FormA() {
         initComponents();
     }
-    
-    int n1, n2;
+    double n1, n2;
     String num = "";
     char sign = ' ';
-    
-    boolean getUserInput() {
-        String s = "";
-//        String s2 = num2.getText();
-        
-//        try {
-//            n1 = Integer.parseInt(s);
-////            n2 = Integer.parseInt(s2);
-//        } catch (NumberFormatException e) {
-//            resultLabel.setText("You have entered an invalid input");
-//            return false;
-//        }
-//        return true;
-        return false;
+    int count = 0;
+    double result = 0;
+    void reset() {
+        n1 = 0;
+        n2 = 0;
+        num = "";
+        sign = ' ';
+        count = 0;
     }
-
+    
+    void appendHelper() {
+        n1 = Double.parseDouble(num);
+        num1.setText(String.valueOf(n1));
+        num = "";
+        count++;
+    }
+    
+    void setTextToRightPlace() {
+        if (count == 0) {
+            num1.setText(num);
+        } else if (count == 1) {
+            num2.setText(num);
+        } else {
+            num1.setText(String.valueOf(result));
+            num2.setText(num);
+        }
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -287,34 +297,22 @@ public class FormA extends javax.swing.JFrame {
 
     private void addBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBttnActionPerformed
         sign = '+';
-        n1 = Integer.parseInt(num);
-        num1.setText(String.valueOf(n1));
-        num = "";
-        getUserInput();
+        appendHelper();
     }//GEN-LAST:event_addBttnActionPerformed
 
     private void multBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multBttnActionPerformed
         sign = '*';
-        n1 = Integer.parseInt(num);
-        num1.setText(String.valueOf(n1));
-        num = "";
-        getUserInput();
+        appendHelper();
     }//GEN-LAST:event_multBttnActionPerformed
 
     private void subBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subBttnActionPerformed
         sign = '-';
-        n1 = Integer.parseInt(num);
-        num1.setText(String.valueOf(n1));
-        num = "";
-        getUserInput();
+        appendHelper();
     }//GEN-LAST:event_subBttnActionPerformed
 
     private void divBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divBttnActionPerformed
         sign = '/';
-        n1 = Integer.parseInt(num);
-        num1.setText(String.valueOf(n1));
-        num = "";
-        getUserInput();
+        appendHelper();
     }//GEN-LAST:event_divBttnActionPerformed
 
     private void num1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num1ActionPerformed
@@ -323,53 +321,52 @@ public class FormA extends javax.swing.JFrame {
 
     private void butn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn1ActionPerformed
         num += 1;
-        resultLabel.setText(num);
+        setTextToRightPlace();
     }//GEN-LAST:event_butn1ActionPerformed
 
     private void butn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn4ActionPerformed
         num += 4;
-        resultLabel.setText(num);
+        setTextToRightPlace();
     }//GEN-LAST:event_butn4ActionPerformed
 
     private void butn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn7ActionPerformed
         num += 7;
-        resultLabel.setText(num);
+        setTextToRightPlace();
     }//GEN-LAST:event_butn7ActionPerformed
 
     private void butn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn2ActionPerformed
         num += 2;
-        resultLabel.setText(num);
+        setTextToRightPlace();
     }//GEN-LAST:event_butn2ActionPerformed
 
     private void butn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn5ActionPerformed
         num += 5;
-        resultLabel.setText(num);
+        setTextToRightPlace();
     }//GEN-LAST:event_butn5ActionPerformed
 
     private void butn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn8ActionPerformed
         num += 8;
-        resultLabel.setText(num);
+        setTextToRightPlace();
     }//GEN-LAST:event_butn8ActionPerformed
 
     private void butn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn0ActionPerformed
         num += 0;
-        resultLabel.setText(num);
+        setTextToRightPlace();
     }//GEN-LAST:event_butn0ActionPerformed
 
     private void butn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn6ActionPerformed
         num += 6;
-        resultLabel.setText(num);
+        setTextToRightPlace();
     }//GEN-LAST:event_butn6ActionPerformed
 
     private void butn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn3ActionPerformed
         num += 3;
-        resultLabel.setText(num);
+        setTextToRightPlace();
     }//GEN-LAST:event_butn3ActionPerformed
 
     private void eqlButtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eqlButtnActionPerformed
         n2 = Integer.parseInt(num);
         num2.setText(String.valueOf(n2));
-        double result = 0;
         switch (sign) {
             case ('+') :
                 result = n1 + n2;
@@ -381,7 +378,7 @@ public class FormA extends javax.swing.JFrame {
                 result = n1 * n2;
                 break;
             case ('/') :
-                result = (double)n1 / n2;
+                result = n1 / n2;
                 break;
         }
         resultLabel.setText(String.valueOf(result));
@@ -389,17 +386,18 @@ public class FormA extends javax.swing.JFrame {
 
     private void butn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn9ActionPerformed
         num += 9;
-        resultLabel.setText(num);
+        setTextToRightPlace();
     }//GEN-LAST:event_butn9ActionPerformed
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
         int n1 = 0, n2 = 0;
+        count = 0;
         num = "";
         sign = ' ';
         num1.setText("");
         num2.setText("");
         resultLabel.setText("");
-        getUserInput();
+//        getUserInput();
     }//GEN-LAST:event_clearActionPerformed
 
     public static void main(String args[]) {
