@@ -12,22 +12,22 @@ public class FormA extends javax.swing.JFrame {
     }
     
     int n1, n2;
-    boolean flag = true;
     String num = "";
-    int count = 0;
+    char sign = ' ';
     
     boolean getUserInput() {
         String s = "";
 //        String s2 = num2.getText();
         
-        try {
-            n1 = Integer.parseInt(s);
-//            n2 = Integer.parseInt(s2);
-        } catch (NumberFormatException e) {
-            resultLabel.setText("You have entered invalid input");
-            return false;
-        }
-        return true;
+//        try {
+//            n1 = Integer.parseInt(s);
+////            n2 = Integer.parseInt(s2);
+//        } catch (NumberFormatException e) {
+//            resultLabel.setText("You have entered an invalid input");
+//            return false;
+//        }
+//        return true;
+        return false;
     }
 
     @SuppressWarnings("unchecked")
@@ -53,7 +53,8 @@ public class FormA extends javax.swing.JFrame {
         butn6 = new javax.swing.JButton();
         butn3 = new javax.swing.JButton();
         eqlButtn = new javax.swing.JButton();
-        butn10 = new javax.swing.JButton();
+        butn9 = new javax.swing.JButton();
+        clear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -168,10 +169,17 @@ public class FormA extends javax.swing.JFrame {
             }
         });
 
-        butn10.setText("9");
-        butn10.addActionListener(new java.awt.event.ActionListener() {
+        butn9.setText("9");
+        butn9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butn10ActionPerformed(evt);
+                butn9ActionPerformed(evt);
+            }
+        });
+
+        clear.setText("C");
+        clear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearActionPerformed(evt);
             }
         });
 
@@ -194,9 +202,11 @@ public class FormA extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(butn1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(butn4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(butn7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(butn1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(butn4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(butn7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(butn2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -208,7 +218,7 @@ public class FormA extends javax.swing.JFrame {
                                 .addComponent(eqlButtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(butn6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(butn3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(butn10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(butn9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(resultLabel)
@@ -258,7 +268,7 @@ public class FormA extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(butn8, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(butn10, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(butn9, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(butn3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -266,7 +276,8 @@ public class FormA extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(butn0, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(eqlButtn, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(eqlButtn, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -275,23 +286,35 @@ public class FormA extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBttnActionPerformed
-        if (getUserInput()) resultLabel.setText(String.valueOf(n1 + n2));
-        count++;
+        sign = '+';
+        n1 = Integer.parseInt(num);
+        num1.setText(String.valueOf(n1));
+        num = "";
+        getUserInput();
     }//GEN-LAST:event_addBttnActionPerformed
 
     private void multBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multBttnActionPerformed
-        if (getUserInput()) resultLabel.setText(String.valueOf(n1 * n2));
-        count++;
+        sign = '*';
+        n1 = Integer.parseInt(num);
+        num1.setText(String.valueOf(n1));
+        num = "";
+        getUserInput();
     }//GEN-LAST:event_multBttnActionPerformed
 
     private void subBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subBttnActionPerformed
-        if (getUserInput()) resultLabel.setText(String.valueOf(n1 - n2));
-        count++;
+        sign = '-';
+        n1 = Integer.parseInt(num);
+        num1.setText(String.valueOf(n1));
+        num = "";
+        getUserInput();
     }//GEN-LAST:event_subBttnActionPerformed
 
     private void divBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divBttnActionPerformed
-        if (getUserInput()) resultLabel.setText(String.valueOf((double)n1 / n2));
-        count++;
+        sign = '/';
+        n1 = Integer.parseInt(num);
+        num1.setText(String.valueOf(n1));
+        num = "";
+        getUserInput();
     }//GEN-LAST:event_divBttnActionPerformed
 
     private void num1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num1ActionPerformed
@@ -344,13 +367,40 @@ public class FormA extends javax.swing.JFrame {
     }//GEN-LAST:event_butn3ActionPerformed
 
     private void eqlButtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eqlButtnActionPerformed
-        num += 9;
-        resultLabel.setText(num);
+        n2 = Integer.parseInt(num);
+        num2.setText(String.valueOf(n2));
+        double result = 0;
+        switch (sign) {
+            case ('+') :
+                result = n1 + n2;
+                break;
+            case ('-') :
+                result = n1 - n2;
+                break;
+            case ('*') :
+                result = n1 * n2;
+                break;
+            case ('/') :
+                result = (double)n1 / n2;
+                break;
+        }
+        resultLabel.setText(String.valueOf(result));
     }//GEN-LAST:event_eqlButtnActionPerformed
 
-    private void butn10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_butn10ActionPerformed
+    private void butn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn9ActionPerformed
+        num += 9;
+        resultLabel.setText(num);
+    }//GEN-LAST:event_butn9ActionPerformed
+
+    private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
+        int n1 = 0, n2 = 0;
+        num = "";
+        sign = ' ';
+        num1.setText("");
+        num2.setText("");
+        resultLabel.setText("");
+        getUserInput();
+    }//GEN-LAST:event_clearActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -387,7 +437,6 @@ public class FormA extends javax.swing.JFrame {
     private javax.swing.JButton addBttn;
     private javax.swing.JButton butn0;
     private javax.swing.JButton butn1;
-    private javax.swing.JButton butn10;
     private javax.swing.JButton butn2;
     private javax.swing.JButton butn3;
     private javax.swing.JButton butn4;
@@ -395,6 +444,8 @@ public class FormA extends javax.swing.JFrame {
     private javax.swing.JButton butn6;
     private javax.swing.JButton butn7;
     private javax.swing.JButton butn8;
+    private javax.swing.JButton butn9;
+    private javax.swing.JButton clear;
     private javax.swing.JButton divBttn;
     private javax.swing.JButton eqlButtn;
     private javax.swing.JButton multBttn;

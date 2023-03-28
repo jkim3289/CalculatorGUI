@@ -18,4 +18,4 @@ public class GUI {
     }
     
 }
-C:\Users\ITWILL\Documents\NetBeansProjects\GUI\src\gui\GUI.java
+//C:\Users\ITWILL\Documents\NetBeansProjects\GUI\src\gui\GUI.java
