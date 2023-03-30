@@ -16,6 +16,7 @@ public class FormA extends javax.swing.JFrame {
     int count = 0;
     double result = 0;
     boolean done = false;
+    boolean full = false;
     
     void reset() {
         n1 = n2 = result = 0;
@@ -26,6 +27,12 @@ public class FormA extends javax.swing.JFrame {
         num1.setText("");
         num2.setText("");
         resultLabel.setText("");
+    }
+    void ifFullReset() {
+        if (full) {
+            reset();
+            full = !full;
+        }
     }
     
     void appendHelper() {
@@ -355,46 +362,55 @@ public class FormA extends javax.swing.JFrame {
     }//GEN-LAST:event_num1ActionPerformed
 
     private void butn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn1ActionPerformed
+        ifFullReset();
         num += 1;
         setTextToRightPlace();
     }//GEN-LAST:event_butn1ActionPerformed
 
     private void butn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn4ActionPerformed
+        ifFullReset();
         num += 4;
         setTextToRightPlace();
     }//GEN-LAST:event_butn4ActionPerformed
 
     private void butn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn7ActionPerformed
+        ifFullReset();
         num += 7;
         setTextToRightPlace();
     }//GEN-LAST:event_butn7ActionPerformed
 
     private void butn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn2ActionPerformed
+        ifFullReset();
         num += 2;
         setTextToRightPlace();
     }//GEN-LAST:event_butn2ActionPerformed
 
     private void butn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn5ActionPerformed
+        ifFullReset();
         num += 5;
         setTextToRightPlace();
     }//GEN-LAST:event_butn5ActionPerformed
 
     private void butn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn8ActionPerformed
+        ifFullReset();
         num += 8;
         setTextToRightPlace();
     }//GEN-LAST:event_butn8ActionPerformed
 
     private void butn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn0ActionPerformed
+        ifFullReset();
         num += 0;
         setTextToRightPlace();
     }//GEN-LAST:event_butn0ActionPerformed
 
     private void butn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn6ActionPerformed
+        ifFullReset();
         num += 6;
         setTextToRightPlace();
     }//GEN-LAST:event_butn6ActionPerformed
 
     private void butn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn3ActionPerformed
+        ifFullReset();
         num += 3;
         setTextToRightPlace();
     }//GEN-LAST:event_butn3ActionPerformed
@@ -408,6 +424,7 @@ public class FormA extends javax.swing.JFrame {
         checkSignAndCompute(sign);
         count++;
         done = true;
+        full = true;
         resultLabel.setText(String.valueOf(result));
     }//GEN-LAST:event_eqlButtnActionPerformed
 
