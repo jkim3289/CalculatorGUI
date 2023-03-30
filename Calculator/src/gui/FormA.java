@@ -15,12 +15,17 @@ public class FormA extends javax.swing.JFrame {
     char sign = ' ';
     int count = 0;
     double result = 0;
+    boolean done = false;
+    
     void reset() {
-        n1 = 0;
-        n2 = 0;
+        n1 = n2 = result = 0;
         num = "";
         sign = ' ';
         count = 0;
+        done = false;
+        num1.setText("");
+        num2.setText("");
+        resultLabel.setText("");
     }
     
     void appendHelper() {
@@ -29,15 +34,45 @@ public class FormA extends javax.swing.JFrame {
         num = "";
         count++;
     }
+    void checkSignAndCompute(char sign) {
+        switch (sign) {
+            case ('+') :
+                result = n1 + n2;
+                break;
+            case ('-') :
+                result = n1 - n2;
+                break;
+            case ('*') :
+                result = n1 * n2;
+                break;
+            case ('/') :
+                result = (double)n1 / n2;
+                break;  
+        }
+    }
     
+    void resultToNum1() {
+        if (done) {
+            n1 = result;
+            num1.setText(String.valueOf(n1));
+        }
+    }
     void setTextToRightPlace() {
-        if (count == 0) {
-            num1.setText(num);
-        } else if (count == 1) {
-            num2.setText(num);
-        } else {
-            num1.setText(String.valueOf(result));
-            num2.setText(num);
+        switch (count) {
+            case 0:
+                num1.setText(num);
+                break;
+            case 1:
+                num2.setText(num);
+                break;
+            default:
+                if (done) {
+                    num = "";
+                    num2.setText("");
+                    done = !done;
+                    num1.setText(String.valueOf(result));
+                }
+                num2.setText(num);
         }
     }
     @SuppressWarnings("unchecked")
@@ -365,22 +400,14 @@ public class FormA extends javax.swing.JFrame {
     }//GEN-LAST:event_butn3ActionPerformed
 
     private void eqlButtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eqlButtnActionPerformed
+        // method will be executed
+        // if a user wants to do the same calculation with the given result 
+        resultToNum1();
         n2 = Integer.parseInt(num);
         num2.setText(String.valueOf(n2));
-        switch (sign) {
-            case ('+') :
-                result = n1 + n2;
-                break;
-            case ('-') :
-                result = n1 - n2;
-                break;
-            case ('*') :
-                result = n1 * n2;
-                break;
-            case ('/') :
-                result = n1 / n2;
-                break;
-        }
+        checkSignAndCompute(sign);
+        count++;
+        done = true;
         resultLabel.setText(String.valueOf(result));
     }//GEN-LAST:event_eqlButtnActionPerformed
 
@@ -390,14 +417,7 @@ public class FormA extends javax.swing.JFrame {
     }//GEN-LAST:event_butn9ActionPerformed
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
-        int n1 = 0, n2 = 0;
-        count = 0;
-        num = "";
-        sign = ' ';
-        num1.setText("");
-        num2.setText("");
-        resultLabel.setText("");
-//        getUserInput();
+        reset();
     }//GEN-LAST:event_clearActionPerformed
 
     public static void main(String args[]) {
