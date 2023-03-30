@@ -15,15 +15,14 @@ public class FormA extends javax.swing.JFrame {
     char sign = ' ';
     int count = 0;
     double result = 0;
-    boolean done = false;
-    boolean full = false;
+    boolean done = false, full = false;
     
     void reset() {
         n1 = n2 = result = 0;
         num = "";
         sign = ' ';
         count = 0;
-        done = false;
+        done = full = false;
         num1.setText("");
         num2.setText("");
         resultLabel.setText("");
