@@ -367,23 +367,23 @@ public class FormA extends javax.swing.JFrame {
         setTextToRightPlace();
     }//GEN-LAST:event_butn1ActionPerformed
 
-    private void butn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn4ActionPerformed
-        ifFullReset();
-        num += Integer.parseInt(((JButton)evt.getSource()).getActionCommand());
-        setTextToRightPlace();
-    }//GEN-LAST:event_butn4ActionPerformed
-
-    private void butn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn7ActionPerformed
-        ifFullReset();
-        num += Integer.parseInt(((JButton)evt.getSource()).getActionCommand());
-        setTextToRightPlace();
-    }//GEN-LAST:event_butn7ActionPerformed
-
     private void butn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn2ActionPerformed
         ifFullReset();
         num += Integer.parseInt(evt.getActionCommand());
         setTextToRightPlace();
     }//GEN-LAST:event_butn2ActionPerformed
+
+    private void butn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn3ActionPerformed
+        ifFullReset();
+        num += Integer.parseInt(((JButton)evt.getSource()).getActionCommand());
+        setTextToRightPlace();
+    }//GEN-LAST:event_butn3ActionPerformed
+
+    private void butn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn4ActionPerformed
+        ifFullReset();
+        num += Integer.parseInt(((JButton)evt.getSource()).getActionCommand());
+        setTextToRightPlace();
+    }//GEN-LAST:event_butn4ActionPerformed
 
     private void butn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn5ActionPerformed
         ifFullReset();
@@ -391,29 +391,35 @@ public class FormA extends javax.swing.JFrame {
         setTextToRightPlace();
     }//GEN-LAST:event_butn5ActionPerformed
 
-    private void butn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn8ActionPerformed
-        ifFullReset();
-        num += Integer.parseInt(((JButton)evt.getSource()).getActionCommand());
-        setTextToRightPlace();
-    }//GEN-LAST:event_butn8ActionPerformed
-
-    private void butn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn0ActionPerformed
-        ifFullReset();
-        num += Integer.parseInt(((JButton)evt.getSource()).getActionCommand());
-        setTextToRightPlace();
-    }//GEN-LAST:event_butn0ActionPerformed
-
     private void butn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn6ActionPerformed
         ifFullReset();
         num += Integer.parseInt(((JButton)evt.getSource()).getActionCommand());
         setTextToRightPlace();
     }//GEN-LAST:event_butn6ActionPerformed
 
-    private void butn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn3ActionPerformed
+    private void butn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn7ActionPerformed
         ifFullReset();
         num += Integer.parseInt(((JButton)evt.getSource()).getActionCommand());
         setTextToRightPlace();
-    }//GEN-LAST:event_butn3ActionPerformed
+    }//GEN-LAST:event_butn7ActionPerformed
+
+    private void butn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn8ActionPerformed
+        ifFullReset();
+        num += Integer.parseInt(((JButton)evt.getSource()).getActionCommand());
+        setTextToRightPlace();
+    }//GEN-LAST:event_butn8ActionPerformed
+
+    private void butn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn9ActionPerformed
+        ifFullReset();
+        num += Integer.parseInt(((JButton)evt.getSource()).getActionCommand());
+        setTextToRightPlace();
+    }//GEN-LAST:event_butn9ActionPerformed
+
+    private void butn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn0ActionPerformed
+        ifFullReset();
+        num += Integer.parseInt(((JButton)evt.getSource()).getActionCommand());
+        setTextToRightPlace();
+    }//GEN-LAST:event_butn0ActionPerformed
 
     private void eqlButtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eqlButtnActionPerformed
         // method will be executed
@@ -427,12 +433,6 @@ public class FormA extends javax.swing.JFrame {
         full = true;
         resultLabel.setText(String.valueOf(result));
     }//GEN-LAST:event_eqlButtnActionPerformed
-
-    private void butn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butn9ActionPerformed
-        ifFullReset();
-        num += Integer.parseInt(((JButton)evt.getSource()).getActionCommand());
-        setTextToRightPlace();
-    }//GEN-LAST:event_butn9ActionPerformed
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
         reset();
